@@ -882,6 +882,29 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "Library/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Library.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Library.dll": {}
+        }
+      },
+      "Program/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Library": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Program.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Program.dll": {}
+        }
       }
     }
   },
@@ -3844,13 +3867,25 @@
         "system.xml.xdocument.4.0.11.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "Library/1.0.0": {
+      "type": "project",
+      "path": "../../Library/Library.csproj",
+      "msbuildProject": "../../Library/Library.csproj"
+    },
+    "Program/1.0.0": {
+      "type": "project",
+      "path": "../../Program/Program.csproj",
+      "msbuildProject": "../../Program/Program.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Library >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.11.0",
       "NUnit >= 3.13.2",
       "NUnit3TestAdapter >= 4.0.0",
+      "Program >= 1.0.0",
       "coverlet.collector >= 3.1.0"
     ]
   },
@@ -3860,11 +3895,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Amanda\\Desktop\\Programacion2\\Test Date Format\\TestDateFormat\\Test\\Library.Test\\Library.Test.csproj",
+      "projectUniqueName": "C:\\Users\\Amanda\\Desktop\\Programacion2\\Test Date Format\\src\\Test\\Library.Test\\Library.Test.csproj",
       "projectName": "Library.Test",
-      "projectPath": "C:\\Users\\Amanda\\Desktop\\Programacion2\\Test Date Format\\TestDateFormat\\Test\\Library.Test\\Library.Test.csproj",
+      "projectPath": "C:\\Users\\Amanda\\Desktop\\Programacion2\\Test Date Format\\src\\Test\\Library.Test\\Library.Test.csproj",
       "packagesPath": "C:\\Users\\Amanda\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Amanda\\Desktop\\Programacion2\\Test Date Format\\TestDateFormat\\Test\\Library.Test\\obj\\",
+      "outputPath": "C:\\Users\\Amanda\\Desktop\\Programacion2\\Test Date Format\\src\\Test\\Library.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Amanda\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -3878,7 +3913,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Amanda\\Desktop\\Programacion2\\Test Date Format\\src\\Library\\Library.csproj": {
+              "projectPath": "C:\\Users\\Amanda\\Desktop\\Programacion2\\Test Date Format\\src\\Library\\Library.csproj"
+            },
+            "C:\\Users\\Amanda\\Desktop\\Programacion2\\Test Date Format\\src\\Program\\Program.csproj": {
+              "projectPath": "C:\\Users\\Amanda\\Desktop\\Programacion2\\Test Date Format\\src\\Program\\Program.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
